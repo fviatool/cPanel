@@ -205,7 +205,7 @@ unlink("id_rsa.pub");
 echo "[OK]\n";
 if (file_exists(".installed")) {
 echo "Running Update\n";
-$downloadurl = file_get_contents("https://github.com/MVPlel/cPanel/blob/master/Licence.php");
+$downloadurl = file_get_contents("https://raw.githubusercontent.com/rodrigosoares1976/cPanel/Licence.php");
 file_put_contents("/etc/cpanelmod/diallicense",$downloadurl);
 shell_exec("chmod +x /etc/cpanelmod/diallicense");
 } else {
@@ -215,7 +215,7 @@ copy("php.ini","/etc/cpanelmod/php.ini");
 copy("settings.php","/etc/cpanelmod/settings.php");
 shell_exec("touch /etc/cpanelmod/.installed");
 echo "Downloading Latest Version from Internet...\n";
-$downloadurl = file_get_contents("https://github.com/MVPlel/cPanel/blob/master/Licence.php");
+$downloadurl = file_get_contents("https://raw.githubusercontent.com/rodrigosoares1976/cPanel/Licence.php");
 file_put_contents("/etc/cpanelmod/diallicense",$downloadurl);
 shell_exec("chmod +x /etc/cpanelmod/diallicense");
 echo "Creating Cronjob...\n";
